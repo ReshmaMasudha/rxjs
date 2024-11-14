@@ -1,0 +1,7 @@
+<!--Accessing the loading observable in the loading service.-->
+
+<div class="spinner-container" *ngIf="loadingService.loading$ | async">
+
+    <mat-spinner></mat-spinner>
+
+</div>
