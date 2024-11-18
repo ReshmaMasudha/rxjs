@@ -34,6 +34,8 @@ import {MessagesComponent} from './messages/messages.component';
 import {SearchLessonsComponent} from './search-lessons/search-lessons.component';
 import { LoadingComponent } from './loading/loading.component';
 import { CoursesCardListComponent } from './courses-card-list/courses-card-list.component';
+import { LoadingService } from './loading/loading.service';
+import { MessageService } from './messages/messages.service';
 // import {LoadingService} from './loading/loading.service';
 // import {MessagesService} from './messages/messages.service';
 
@@ -72,8 +74,9 @@ import { CoursesCardListComponent } from './courses-card-list/courses-card-list.
         MatDatepickerModule,
         MatMomentDateModule,
         ReactiveFormsModule], providers: [
-        // LoadingService,
-        // MessagesService,
+            //including in the providers of app component to make it available to all components and also singleton comp, here course store componnet.
+            LoadingService,
+            MessageService,
         provideHttpClient(withInterceptorsFromDi())
     ] })
 export class AppModule {
