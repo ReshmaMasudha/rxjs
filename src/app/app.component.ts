@@ -1,5 +1,4 @@
 import {Component, OnInit} from '@angular/core';
-import { LoadingService } from './loading/loading.service';
 
 
 
@@ -8,7 +7,7 @@ import { LoadingService } from './loading/loading.service';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
   //Adding in providers to make it available to home component and its children.
-  providers: [LoadingService]
+  //providers: [LoadingService, MessageService]
 })
 export class AppComponent implements  OnInit {
 

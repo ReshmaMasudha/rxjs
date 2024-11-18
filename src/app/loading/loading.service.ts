@@ -7,6 +7,10 @@ import { concatMap, finalize, tap } from "rxjs/operators";
 
 export class LoadingService{
 
+    constructor(){
+        console.log("loading service created...")
+    }
+
     loadingSubject = new BehaviorSubject<boolean>(false);
     
     loading$:Observable<boolean> = this.loadingSubject.asObservable();
@@ -20,6 +24,7 @@ export class LoadingService{
                  this.loadingOn()
         ),
         //replaces the null observable emitted by of method with the input observable
+        //make this of(null) to emit the observable value so using concatMap
         concatMap(() => obs$),
         //once the value is emitted, the finalize method is called to dismiss the loader.
         finalize(() => this.loadingOff())
